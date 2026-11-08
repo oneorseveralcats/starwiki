@@ -25,6 +25,6 @@ Dictionaries for currently generated languages:
 
 | Language | Compressed | Uncompressed |
 | --- | --- | --- |
-| English | [en_1m](https://github.com/oneorseveralcats/starwiki/releases/download/english/starwiki_en_1m.tar.gz) | [en_1m](https://github.com/oneorseveralcats/starwiki/releases/download/english/starwiki_en_1m_uncompressed.tar.gz) |
-| Esperanto | [eo_all](https://github.com/oneorseveralcats/starwiki/releases/download/esperanto/starwiki_eo_all.tar.gz) | [eo_all](https://github.com/oneorseveralcats/starwiki/releases/download/esperanto/starwiki_eo_all_uncompressed.tar.gz) |
-| Toki Pona | [tok_all](https://github.com/oneorseveralcats/starwiki/releases/download/toki_pona/starwiki_tok_all.tar.gz) | [tok_all](https://github.com/oneorseveralcats/starwiki/releases/download/toki_pona/starwiki_tok_all_uncompressed.tar.gz) |
+| English | [en_1m](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_en_1m.tar.gz) | [en_1m](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_en_1m_uncompressed.tar.gz) |
+| Esperanto | [eo_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_eo_all.tar.gz) | [eo_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_eo_all_uncompressed.tar.gz) |
+| Toki Pona | [tok_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_tok_all.tar.gz) | [tok_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_tok_all_uncompressed.tar.gz) |
