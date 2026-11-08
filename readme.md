@@ -1,5 +1,7 @@
 # StarWiki
 
+<img width="955" height="1045" alt="English Wikipedia entry opened in KoReader" src="https://github.com/user-attachments/assets/78f8408d-35f6-428c-ad23-acf6892a19b5" />
+
 StarWiki is a project to create StarDict-formatted offline Wikipedia encyclopedias. The project uses
 [mwoffliner](https://github.com/openzim/mwoffliner) to scrape Wikipedia articles, strip most
 elements from them (so that only the summary section at the top of the page is left) and pack them
