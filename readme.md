@@ -7,8 +7,9 @@ into a zim file. From there, [pyglossary](https://github.com/ilius/pyglossary) i
 from Zim to StarDict format.
 
 There are likely going to be some formatting issues with certain articles. I have fixed all that I
-have seen but I haven't looked at anywhere near all the dictionary entries. Also, I am an English
-speaker so haven't really made use of the non-English dictionaries here.
+have seen but I haven't looked at anywhere near all the dictionary entries. Also, I am a native
+English speaker with minimal second-language abilities so haven't really made use of the non-English
+dictionaries here.
 
 Dictionaries are either the top 1 million articles for a language or all articles if the language
 has less than a million articles.
