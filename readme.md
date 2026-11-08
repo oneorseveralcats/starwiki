@@ -27,5 +27,6 @@ Dictionaries for currently generated languages:
 | --- | --- | --- |
 | English | [en_1m](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_en_1m.tar.gz) | [en_1m](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_en_1m_uncompressed.tar.gz) |
 | Esperanto | [eo_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_eo_all.tar.gz) | [eo_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_eo_all_uncompressed.tar.gz) |
+| Interslavic | [isv_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_isv_all.tar.gz) | [isv_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_isv_all_uncompressed.tar.gz) |
 | Toki Pona | [tok_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_tok_all.tar.gz) | [tok_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_tok_all_uncompressed.tar.gz) |
 | Volapük | [vo_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_vo_all.tar.gz) | [vo_all](https://github.com/oneorseveralcats/starwiki/releases/latest/download/starwiki_vo_all_uncompressed.tar.gz) |
