@@ -40,6 +40,14 @@ generate_stardict() {
 
       sed -i 's_\(bookname=.*\)\.zim_\1_g' "$out_file"
       sed -i 's_\(bookname=.*\)\.zim_\1_g' "$out_file_uncompressed"
+
+      pushd "$out_dir" || exit
+      tar -czf ../"$base_name".tar.gz ./*
+      popd || exit
+
+      pushd "$out_dir_uncompressed" || exit
+      tar -czf ../"${base_name}_uncompressed".tar.gz ./*
+      popd || exit
     else
       echo "Error: '$out_file' already exists!" >&2
     fi
