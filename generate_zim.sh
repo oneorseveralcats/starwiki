@@ -19,8 +19,8 @@ generate_zim() {
 
   if [ -n "$3" ]; then
     podman run \
-      -v "$(pwd)/flavours/starWiki.js":/starWiki.js \
-      -v "$(pwd)/test.tsv":/test.tsv \
+      -v "$(pwd)/res/flavours/starWiki.js":/starWiki.js \
+      -v "$(pwd)/res/test.tsv":/test.tsv \
       -v "$(pwd)"/out:/out \
       -ti ghcr.io/openzim/mwoffliner:dev mwoffliner \
         --adminEmail="$EMAIL" \
