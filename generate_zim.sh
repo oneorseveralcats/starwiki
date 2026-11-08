@@ -4,10 +4,11 @@
 #              a custom article preprocessor to remove the undesired elements
 #              from it.
 
-# secrets:
+# options:
 #   EMAIL: added to request headers so <mediawiki> being scraped knows who to
 #          contact if scraping is a problem.
-source ./secrets
+#   SPEED: number of parallel workers to do the scraping
+source ./options
 
 generate_zim() {
   local mwUrl="$1"

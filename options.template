@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# secrets:
+# options:
 #   EMAIL: added to request headers so <mediawiki> being scraped knows who to
 #          contact if scraping is a problem.
+#   SPEED: number of parallel workers to do the scraping
 export EMAIL=""
