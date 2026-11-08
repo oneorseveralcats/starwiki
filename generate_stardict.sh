@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ./venv/bin/activate
+source ./.venv/bin/activate
 
 # Takes a Zim file and generates a stardict file in the "stardict" subdirectory
 # that the Zim is in.
