@@ -17,6 +17,7 @@ generate_stardict() {
 
   local out_dir="$dir_name/stardict/$base_name"
   local out_file="$out_dir/$base_name.ifo"
+  local out_file_uncompressed="${out_dir}_uncompressed/${base_name}.ifo"
 
   if [ -e "$in_file" ]; then
     if [ ! -e "$out_file" ]; then
@@ -27,6 +28,13 @@ generate_stardict() {
          --write-options="dictzip=True" \
          "$in_file" \
          "$out_file"
+
+      pyglossary \
+         --read-format="Zim" \
+         --sqlite \
+         "$in_file" \
+         "$out_file_uncompressed"
+
     else
       echo "Error: '$out_file' already exists!" >&2
     fi
