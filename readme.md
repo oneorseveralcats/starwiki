@@ -13,6 +13,11 @@ speaker so haven't really made use of the non-English dictionaries here.
 Dictionaries are either the top 1 million articles for a language or all articles if the language
 has less than a million articles.
 
+There are both compressed and uncompressed versions of the dictionaries. The compressed is much
+smaller (English is 4x smaller at ~800MBs vs 3.8GBs), but requires more memory to use. If you're
+using a larger dictionary with something like [Crosspoint Reader](https://crosspointreader.com/),
+you will probably have to use the uncompressed version.
+
 Dictionaries for currently generated languages:
 
 | Language | Compressed | Uncompressed |
