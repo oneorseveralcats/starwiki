@@ -71,6 +71,7 @@ generate_zim_full_wiki() {
 }
 
 case "$1" in
+  ca) generate_zim_full_wiki "ca";;
   eo) generate_zim_full_wiki "eo";;
   en1m) generate_zim_1m_wiki "en";;
   test|testing) generate_zim_wiki "en" "/test.tsv" "testing";;

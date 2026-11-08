@@ -57,6 +57,7 @@ recipes=(
 
 case "$1" in
   "eo") generate_stardict "./out/starwiki_eo_all.zim";;
+  "ca") generate_stardict "./out/starwiki_ca_all.zim";;
   "en100k") generate_stardict "./out/starwiki_en_100k.zim";;
   "en1m") generate_stardict "./out/starwiki_en_1m.zim";;
   "test"|"testing") generate_stardict "./out/test.zim";;
