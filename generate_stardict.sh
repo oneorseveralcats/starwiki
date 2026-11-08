@@ -43,11 +43,11 @@ recipes=(
 )
 
 case "$1" in
-  "eo") generate_stardict "./out/starwiki_eo.zim";;
+  "eo") generate_stardict "./out/starwiki_eo_all.zim";;
   "en100k") generate_stardict "./out/starwiki_en_100k.zim";;
   "en1m") generate_stardict "./out/starwiki_en_1m.zim";;
   "test"|"testing") generate_stardict "./out/test.zim";;
-  "tok") generate_stardict "./out/starwiki_tok.zim";;
+  "tok") generate_stardict "./out/starwiki_tok_all.zim";;
   "all")
     for in_file in "${recipes[@]}"; do
       generate_stardict "$in_file"
