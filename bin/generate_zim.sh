@@ -15,10 +15,20 @@ generate_zim() {
   local pageList="$2"
   local customZimTitle="$3"
 
+  local CMD
+  if command -v podman &> /dev/null; then
+    CMD=podman
+  elif command -v docker &> /dev/null; then
+    CMD=docker
+  else
+    echo "ERROR: container engine not found. Install either docker or podman"
+    exit 127
+  fi
+
   mkdir -p "$(pwd)/out"
 
   if [ -n "$3" ]; then
-    podman run \
+    $CMD run \
       -v "$(pwd)/res/flavours/starWiki.js":/starWiki.js \
       -v "$(pwd)/res/test.tsv":/test.tsv \
       -v "$(pwd)"/out:/out \
@@ -31,6 +41,7 @@ generate_zim() {
         --customZimFilename="$customZimTitle.zim" \
         --javaScript=none \
         --format=nodet,nopdf,nopic:mini \
+        --resume\
         --webp \
         --speed=$SPEED
   else
@@ -70,10 +81,15 @@ generate_zim_full_wiki() {
   generate_zim_wiki "$languageCode" "all" "all"
 }
 
-case "$1" in
-  ca) generate_zim_full_wiki "ca";;
-  eo) generate_zim_full_wiki "eo";;
-  en1m) generate_zim_1m_wiki "en";;
-  test|testing) generate_zim_wiki "en" "/test.tsv" "testing";;
-  tok) generate_zim_full_wiki "tok";;
-esac
+main() {
+  local match="$1"
+  case "$match" in
+    *1m) generate_zim_1m_wiki "${match::-2}";;
+
+    test*) generate_zim_wiki "en" "/test.tsv" "testing";;
+
+    *) generate_zim_full_wiki "$match";;
+  esac
+}
+
+main "$@"

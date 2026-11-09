@@ -48,6 +48,9 @@ generate_stardict() {
       pushd "$out_dir_uncompressed" || exit
       tar -czf ../"${base_name}_uncompressed".tar.gz ./*
       popd || exit
+
+      rm -rf "$out_dir"
+      rm -rf "$out_dir_uncompressed"
     else
       echo "Error: '$out_file' already exists!" >&2
     fi
@@ -56,24 +59,14 @@ generate_stardict() {
   fi
 }
 
-recipes=(
- "eo" 
- "en100k"
- "en1m"
- "testing"
-)
+main() {
+  local match="$1"
+  case "$match" in
+    *1m) generate_stardict "./out/starwiki_${match::-2}_1m.zim";;
+    test*) generate_stardict "./out/test.zim";;
+    *) generate_stardict "./out/starwiki_${1}_all.zim";;
+  esac
+}
 
-case "$1" in
-  "eo") generate_stardict "./out/starwiki_eo_all.zim";;
-  "ca") generate_stardict "./out/starwiki_ca_all.zim";;
-  "en100k") generate_stardict "./out/starwiki_en_100k.zim";;
-  "en1m") generate_stardict "./out/starwiki_en_1m.zim";;
-  "test"|"testing") generate_stardict "./out/test.zim";;
-  "tok") generate_stardict "./out/starwiki_tok_all.zim";;
-  "all")
-    for in_file in "${recipes[@]}"; do
-      generate_stardict "$in_file"
-    done
-  ;;
-esac
+main "$@"
 
