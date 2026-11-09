@@ -4,14 +4,14 @@ pkgs.mkShell {
     goldendict-ng
     kiwix
     libzim
-    pyglossary
+    # pyglossary
   ];
 
   shellHook = ''
     LD_LIBRARY_PATH=${pkgs.stdenv.cc.cc.lib}/lib
 
-    if [ -e ./create_venv.sh ] && [ ! -e ./.venv ]; then
-      ./create_venv.sh
+    if [ -e ./bin/create_venv.sh ] && [ ! -e ./.venv ]; then
+      ./bin/create_venv.sh
     fi
   '';
 }
