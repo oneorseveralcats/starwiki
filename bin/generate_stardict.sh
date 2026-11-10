@@ -21,8 +21,11 @@ generate_stardict() {
   local out_dir_uncompressed="$dir_name/stardict/${base_name}_uncompressed"
   local out_file_uncompressed="${out_dir_uncompressed}/${base_name}.ifo"
 
+  local out_archive="${base_name}".tar.gz
+  local out_archive_uncompressed="${base_name}_uncompressed".tar.gz
+
   if [ -e "$in_file" ]; then
-    if [ ! -e "$out_file" ]; then
+    if [ ! -e "$out_file" ] && [ ! -e "$dir_name/stardict/$out_archive" ]; then
       mkdir -p "$out_dir"
       pyglossary \
          --read-format="Zim" \
@@ -31,6 +34,18 @@ generate_stardict() {
          "$in_file" \
          "$out_file"
 
+      sed -i 's_\(bookname=.*\)\.zim_\1_g' "$out_file"
+
+      pushd "$out_dir" || exit
+      tar -czf ../"$out_archive" ./*
+      popd || exit
+
+      rm -rf "$out_dir"
+    else
+      echo "Error: '$out_file' already exists!" >&2
+    fi
+
+    if [ ! -e "$out_file_uncompressed" ] && [ ! -e "$dir_name/stardict/$out_archive_uncompressed" ]; then
       mkdir -p "$out_dir_uncompressed"
       pyglossary \
          --read-format="Zim" \
@@ -38,21 +53,15 @@ generate_stardict() {
          "$in_file" \
          "$out_file_uncompressed"
 
-      sed -i 's_\(bookname=.*\)\.zim_\1_g' "$out_file"
       sed -i 's_\(bookname=.*\)\.zim_\1_g' "$out_file_uncompressed"
 
-      pushd "$out_dir" || exit
-      tar -czf ../"$base_name".tar.gz ./*
-      popd || exit
-
       pushd "$out_dir_uncompressed" || exit
-      tar -czf ../"${base_name}_uncompressed".tar.gz ./*
+      tar -czf ../"$out_archive_uncompressed" ./*
       popd || exit
 
-      rm -rf "$out_dir"
       rm -rf "$out_dir_uncompressed"
     else
-      echo "Error: '$out_file' already exists!" >&2
+      echo "Error: '$out_file_uncompressed' already exists!" >&2
     fi
   else
     echo "Error: '$in_file' doesn't exist!" >&2
