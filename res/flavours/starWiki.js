@@ -19,6 +19,7 @@ export default class starWiki {
       ".ext-phonos",
       ".infobox",
       ".mw-empty-elt",
+      ".mw-file-element",
       ".sidebar",
       ".vertical-navbox",
 
